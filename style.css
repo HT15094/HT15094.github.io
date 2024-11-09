@@ -1038,7 +1038,7 @@ header{
     position: sticky;
     top: 0;
     z-index: 9999;
-    background-color: #ffffff;
+    background-color: var(--dark);
     border-bottom: none;
 }
 header nav{
@@ -1047,7 +1047,7 @@ header nav{
     display: flex;
     justify-content: space-between;
     z-index: 9999;
-    background-color: #ffffff;
+    background-color: var(--dark);
     border-bottom: 1px solid var(--border-grey-min-display);
 }
 .logo{
@@ -1110,7 +1110,8 @@ header nav{
 }
 .dropdown-btn i{
     font-size: 5vw;
-    color: var(--text);
+    font-weight: 400;
+    color: white;
 }
 .container-btn-dropdown{
     display: flex;
