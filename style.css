@@ -1,0 +1,1680 @@
+/* Variables globales */
+:root {
+    /* Colores principales */
+    --primary: #0055cd;
+    --secondary: #fac515;
+    --dark: #060d17;
+    --text: #353535;
+    --fondo-grey: #f1f3f5;
+    --border-grey: #DDDADA;
+    --text-grey: #9b9fa8;
+    --border-grey-min-display: #e3e3e3;
+}
+
+/* Integrar fuentes locales con diferentes pesos */
+@font-face {
+    font-family: 'Inter';
+    src: url("Inter-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url("Inter-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url("Inter-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url("Inter-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+/* Estilos base */
+* {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background: #ffffff;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/******** ESTILOS GENERALES ************/
+a{
+    text-decoration: none;
+}
+p{
+    font-weight: 400;
+    font-size: 1vw;
+    color: var(--text);
+}
+h1{
+    font-weight: 700;
+    font-size: 3.3vw;
+}
+h2{
+    font-weight: 700;
+    font-size: 2.1vw;
+}
+h3{
+    font-weight: 700;
+    font-size: 1.3vw;
+}
+h4{
+    font-weight: 500;
+    font-size: 1.1vw;
+}
+h5{
+    font-weight: 600;
+    font-size: 0.9vw;
+}
+button{
+    cursor: pointer;
+}
+/********* ESTILOS DE BOTONES *****************/
+.btn-general{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0.8vw 1vw;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    font-weight: 500;
+    overflow: hidden;
+}
+.btn-general span{
+    transition: all 350ms ease-in-out;
+    transform: translateX(0.3vw);
+}
+.btn-general i{
+    transform: translateX(1.5vw);
+    transition: all 300ms ease-in-out;
+    font-size: 0.9vw;
+    padding-top: 0.2vw;
+}
+.btn-general:hover span{
+    transform: translateX(-0.3vw)
+}
+.btn-general:hover i{
+    transform: translateX(0.2vw)
+}
+
+/********* ESTILOS DE BOTONES *****************/
+.btn-border{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0.8vw 1.4vw;
+    background-color: transparent;
+    color: #6A6B6D;
+    border: 1px solid #6A6B6D;
+    border-radius: 50vw;
+    font-size: 1vw;
+    font-weight: 500;
+    margin-left: 1vw;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+}
+.btn-border:hover{
+   border: 1px solid var(--primary);
+   color: var(--primary);
+}
+.btn-border i{
+    padding-top: 0.2vw;
+    padding-left: 0.5vw;
+}
+
+/*===================================================================================================================================*/
+/*==================================================== COMPONENTES GENERALES ========================================================*/
+/*===================================================================================================================================*/
+
+/*================================================= CABECERA HEADER =============================================================*/
+
+.dropdown-menu{
+    display: none;
+}
+.container-btn-dropdown{
+    display: none;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: var(--dark);
+    border-bottom: 0px solid var(--border-grey);
+}
+header nav{
+    width: 100%;
+    padding: 0vw 10%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9999;
+    background-color: var(--dark);
+}
+.group-left{
+    display: flex;
+    justify-content: left;
+}
+.group-right{
+    display: flex;
+    justify-content:right;
+}
+.group-right button{
+    margin-left: 1vw;
+}
+.logo{
+    width: 10vw;
+}
+.logo img{
+    width: 100%;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    display: block;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+}
+header ul li {
+    height: 100%;
+    margin-left: 1vw;
+}
+
+header ul li a{
+    background-color: var(--dark);
+    color: white;
+    font-weight: 600;
+    font-size: 1vw;
+    text-decoration: none;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /*text-transform: uppercase;*/
+    transition: all 300ms ease-in-out;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+}
+header ul li a i{
+    padding-left: 0.5vw;
+}
+header ul li a:hover {
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none;
+    z-index: 400; /** encima de todos los elemento, menos de la cabecera*/
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    top: auto;
+    left: 0%;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+    transition: all 400ms ease-in-out;
+    border-top: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--border-grey);
+    pointer-events: auto;
+    background-color: #ffffff;
+    height: auto;
+    animation: slideIn 0.8s forwards;
+    z-index: -1; /* Asegura que el dropdown esté por encima de la capa oscura */
+}
+@keyframes slideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.dropdownContainer:hover .dropdown-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.dropdownContainer:hover > a::before,
+.dropdownContainer:hover > a::after {
+  width: 100%;
+}
+
+/********** LINEA DE ABAJO ***********/
+header nav ul li a::before,
+header nav ul li a::after {
+   z-index: 100;
+   content: '';
+   position: absolute;
+   width: 0%; 
+   height: 0.3vw;
+   background-color: var(--secondary);
+   bottom: 0vw;
+   transition: width 0.2s ease-in-out;
+}
+header nav ul li a::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header nav ul li a::after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+header nav ul li a:hover::before,
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+header nav ul li .dropdown-content a:hover::before,
+header nav ul li .dropdown-content a:hover::after {
+  width: 0%;
+}
+/*********** ESTILOS GENERALES DEL MEGA MENU (PRODUCTOS) Y ESTADOS DE LOS BOTONES  **************/
+.megamenu{
+    display: flex;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0vw 10%;
+    border-bottom: 1px solid var(--border-grey);
+}
+.oculto {
+    display: none;
+}
+.subcategoria button {
+    display: block; /* Hace que cada botón ocupe una línea completa */
+} 
+.menu1 button.activo {
+    color: var(--primary);
+    font-weight: bold;
+}
+.menu2 button.activo {
+    color: var(--primary);
+}
+.menu2 button.activo i{
+    color: var(--primary);
+}
+.menu2 button.activo:hover i{
+    color: var(--primary);
+}
+.menu2 button i{
+    color: transparent;
+}
+.menu2 button:hover i{
+    color: var(--text);
+}
+/** ESTILOS ESPECIFICOS DE CADA MENU ***/
+.menu1{
+    width: 18.5%;
+    padding-top: 1vw;
+    padding-bottom: 6vw;
+    display: flex;
+    flex-direction: column;
+}
+.menu1 button{
+    width: 100%;
+    border: none;
+    padding: 1vw 2vw;
+    border-bottom: 1px solid #F4F4F4;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+    font-weight: 700;
+    color: #333;
+}
+/*****************************/
+.menu2{
+    width: 25%;
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+.menu2{
+    display: flex;
+    flex-direction: column;
+}
+.menu2 button{
+    width: 100%;
+    border: none;
+    padding: 0.7vw 2vw;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+    font-weight: 400;
+}
+/*****************************/
+.menu3{
+    width: 56.5%;
+    display: block;
+    padding: 1vw 2vw;
+}
+.menu3 ul{
+    list-style: none; 
+    display: flex;
+    flex-direction: column;  
+}
+.menu3 ul li{
+    margin-left: 0vw;
+    height: auto;
+    margin-right: auto;
+    background-color:transparent;
+}
+.menu3 a{
+    background-color: transparent;
+    padding: 0;
+    width: min-content;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
+    font-size: 1vw;
+    font-weight: 300;
+    color: var(--text);
+}
+.menu3 a:hover{
+    text-decoration: underline;
+}
+.menu3 h5{
+    color: #9B9FA8;
+    font-size: 1.1vw;
+    margin-bottom: 1vw;
+    margin-top: 0.7vw;
+}
+
+.menu1, .menu2 {
+    border-right: 1px solid var(--border-grey);
+}
+
+.menu-nav-btn{
+    width: 100%;
+    display: flex;
+    padding: 1.5vw 10%;
+    background-color: var(--fondo-grey);
+}
+.menu-nav-btn button{
+    margin-right: 1vw;
+}
+
+
+/*=========================================== ESTILOS DEL CONTENIDO DE LA PORTADA ======================================================*/
+
+.contenedorportada {
+  width: 100%;
+  height: 32vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-container.active {
+  opacity: 1;
+}
+/*****************/
+.content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  /*transform: translate(-50%, -50%);*/
+  text-align: left;
+  color: var(--text);
+  z-index: 2;
+  width: 50%;
+}
+.text-content{
+    width: 100%;
+}
+.content h1{
+    width: 80%;
+}
+.content p{
+    margin-top: 1vw; 
+    width: 70%;
+}
+.content button{
+    margin-top: 1.5vw;   
+}
+
+/******** ESTILOS DEL INDICADOR**********/
+.indicator-container {
+  position: absolute;
+  bottom: 2vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.indicator {
+  width: 1.3vw;
+  height: 0.6vw;
+  border-radius: 0.1vw;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: var(--secondary);
+}
+
+/********* Botones de navegación ***********/
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 2vw;
+  cursor: pointer;
+  z-index: 3;
+  padding: 0.8vw 0.5vw;
+  border-radius: 0.2vw;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.left-button {
+  left: 2vw;
+}
+
+.right-button {
+  right: 2vw;
+}
+/********************************* CSS */
+.slide-1 {
+    background-image: url('banner.webp');
+}
+
+.slide-2 {
+    background-image: url('banner2.webp');
+}
+
+.slide-3 {
+    background-image: url('banner.webp');
+}
+
+.slide-4 {
+    background-image: url('banner2.webp');
+}
+
+/* Ajustes generales para las diapositivas */
+.slide-container {
+    background-size: cover;
+    background-position: center;
+}
+/*=========================================== ESTILOS DE innovative-Products ======================================================*/
+
+.innovative-Products{
+    width: 100%;
+    padding: 4vw 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.innovative-Products h2{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5vw;
+}
+.featured-products{
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.featured-products a{
+    width: 45%;
+    background-color:#f1f5fb;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    text-align: center;
+    margin-top: 2vw;
+}
+.featured-products a img{
+    width: 70%;
+    margin: auto;
+    transition: transform 0.4s ease;
+}
+.featured-products a h4{
+    color: var(--text);
+    font-weight: 600;
+}
+.featured-products a:hover img {
+    transform: scale(1.07);
+}
+.featured-products a p{
+    margin-top: 0.5vw;
+    color: #7d7d7d;
+}
+.featured-products a span{
+    margin-top: 0.5vw;
+    font-size: 1vw;
+    color: var(--primary);
+    transition: all 300ms ease-in-out;
+}
+.featured-products a span i{
+    font-size: 0.8vw;
+}
+.featured-products a:hover span{
+    text-decoration: underline;
+    text-underline-offset: 0.3vw;
+}
+
+/***************************/
+.special-product{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.special-product a{
+    background-color: #f1f5fb;
+    padding: 1.5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2vw;
+}
+.special-product a img{
+    width: 100%;
+    padding: 0vw 3%;
+    transition: transform 0.4s ease;
+}
+.special-product a:hover img {
+    transform: scale(1.07);
+}
+.special-product a h4{
+    font-size: 2.2vw;
+    color: var(--text);
+    width: 100%;
+    padding: 0vw 5%;
+}
+.special-product a p{
+    margin-top: 1vw;
+    color: #7d7d7d;
+}
+.special-product a span{
+    font-size: 1vw;
+    margin-top: 1vw;
+    color: var(--primary);
+    transition: all 300ms ease-in-out;
+}
+.special-product a span i{
+    font-size: 0.8vw;
+}
+.special-product a:hover span{
+    text-decoration: underline;
+    text-underline-offset: 0.3vw;
+}
+
+/*=========================================== ESTILOS DE ABOUT CONTAINER ======================================================*/
+.about-container{
+    width: 100%;
+    padding: 1.5vw 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-container h2{
+    margin-bottom: 3vw;
+}
+.img-about-content-right{
+    width: 50%;
+}
+.img-about-content-right img{
+    width: 90%;
+    display: block;
+    margin-right: auto;
+    height: 22vw;
+    object-fit: cover;
+}
+.img-about-content-left{
+    width: 50%;
+}
+.img-about-content-left img{
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    height: 22vw;
+    object-fit: cover;
+}
+.text-about-content{
+    width: 50%;
+}
+.text-about-content{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.text-about-content h3{
+    margin-bottom: 1vw;
+    font-size: 1.4vw;
+}
+.text-about-content p{
+    margin-top: 1vw;
+}
+.text-about-content a{
+    margin-right: auto;
+    margin-top: 1.5vw;
+    padding-bottom: 0.5vw;
+    color: var(--primary);
+}
+.text-about-content a span{
+    font-size: 1vw;
+    transition: all 300ms ease-in-out;
+}
+.text-about-content a i{
+    font-size: 0.8vw;
+    padding-left: 0.5vw;
+}
+.text-about-content a:hover span{
+    text-decoration: underline;
+    text-underline-offset: 0.4vw;
+}
+
+/*=========================================== ESTILOS DE CARRUSEL CONTAINER ======================================================*/
+.carrusel-container{
+    width: 100%;
+    padding: 4vw 10%;
+    background-color: transparent;
+}
+.carrusel-container h2{
+    text-align: center;
+    margin-bottom: 4vw;
+}
+.wrapper {
+   background-color: rgb(255, 255, 255);
+   width: 100%;
+   padding: 0vw 2%;
+   margin-top: 3vw;
+   margin-bottom: 2vw;
+   height: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.slider {
+   width: 100%;
+   height: auto;
+   position: relative;
+   background: rgb(255, 255, 255);
+   box-shadow: 0px;
+   display: flex;
+   overflow: hidden;
+}
+.slide {
+   height: auto;
+   background-color: transparent;
+   display: flex;
+   align-items: center;
+   animation: slideshow 30s linear infinite;
+}
+.slide img {
+   height: 2.5vw;
+   padding: 0 3vw 0 3vw;
+   display: block;
+   /*filter: grayscale(100%);*/
+}
+@keyframes slideshow {
+   0% {transform: translateX(0);}
+   100% {transform: translateX(-100%);}
+}
+.slider::before, .slider::after {
+   height: 100%;
+   width: 8vw;
+   position: absolute;
+   content: "";
+   background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 100%);
+   z-index: 2;
+}
+.slider::before {
+   left: 0;
+   top: 0;
+}
+.slider::after {
+   right:-0.1vw;
+   top:0;
+   transform: rotateZ(180deg);
+}
+
+/*=========================================== ESTILOS DE OPCIONES DE CONTACTO ======================================================*/
+.options-contact{
+    width: 100%;
+    background-color: var(--fondo-grey);
+    padding: 5vw 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.options-contact-text{
+    width: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.options-contact-text p{
+    width: 75%;
+    margin-right: auto;
+    padding-top: 1vw;
+}
+.options-contact-icons{
+    width: 28%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1vw 0vw;
+}
+.options-contact-icons a{
+    width: 48%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5vw 1vw;
+    transition: all 300ms ease-in-out;
+}
+.options-contact-icons a:hover{
+    background-color: #060d17;
+}
+.options-contact-icons a:hover span{
+    color: #ffffff;
+}
+.options-contact-icons a:hover i{
+    color: #ffffff;
+}
+.options-contact-icons a span{
+    margin-top: 1vw;
+    font-size: 1vw;
+    color: var(--text);
+}
+.options-contact-icons a i{
+    font-size: 2.4vw;
+    color: var(--text);
+}
+
+.options-contact-img{
+    width: 30%;
+}
+.options-contact-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/*=========================================== ESTILOS DE FOOTER ======================================================*/
+footer{
+    width: 80%;
+    margin: auto;
+    border-top: 1px solid #d8dcdf;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3vw 0vw;
+    margin-top: 2vw;
+}
+.info-footer{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.info-footer img{
+    width: 80%;
+    display: block;
+}
+.info-footer h3{
+    margin-bottom: 1vw;
+}
+.info-footer p{
+    color: #9b9fa8;
+    margin-bottom: 1vw;
+}
+.info-footer a{
+    color: #9b9fa8;
+    width: min-content;
+    white-space: nowrap;
+    margin-top: 0.3vw;
+    margin-bottom: 0.3vw;
+    font-size: 1vw;
+    font-weight: 400;
+    transition: all 100ms ease-in-out;
+}
+.info-footer a:hover{
+    color: var(--primary);
+}
+.info-footer a i{
+    padding-right: 0.5vw;
+}
+/*************************/
+.info-footer .social-media{
+    display: flex;
+}
+.info-footer .social-media a{
+    color: #333;
+    margin-right: 1.5vw;
+    background-color: transparent;
+    border: 1px solid #6e6e6e;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.info-footer .social-media a i{
+    font-size: 1.5vw;
+    padding-right: 0vw;
+}
+.info-footer .social-media a:hover{
+    color: var(--primary);
+}
+/***************************/
+.legal{
+    width: 100%;
+    padding: 2vw 10%;
+    background-color: var(--fondo-grey);
+    display: flex;
+    justify-content: space-between;
+}
+.legal p i{
+    padding-right: 0.4vw;
+}
+
+
+
+
+
+
+
+.vacio{
+    height: 800px;
+}
+
+/*===================================================================================================================================*/
+/*==================================================== COMPONENTES GENERALES ========================================================*/
+/*===================================================================================================================================*/
+@media (max-width: 450px) {
+
+/******** ESTILOS GENERALES ************/
+a{
+    text-decoration: none;
+}
+p{
+    font-weight: 400;
+    font-size: 4vw;
+    color: var(--text);
+}
+h1{
+    font-weight: 700;
+    font-size: 8vw;
+}
+h2{
+    font-weight: 700;
+    font-size: 6vw;
+}
+h3{
+    font-weight: 700;
+    font-size: 4vw;
+}
+h4{
+    font-weight: 500;
+    font-size: 4.5vw;
+}
+h5{
+    font-weight: 600;
+    font-size: 3.5vw;
+}
+button{
+    cursor: pointer;
+}
+/* DESACTIVAR EL ENFOQUE AZUL EN MOVILES */
+button:focus,
+button:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}  
+/********* ESTILOS DE BOTONES *****************/
+.btn-general{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 3vw 3vw;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 1vw;
+    font-size: 4vw;
+    font-weight: 500;
+    margin-left: 0vw;
+    overflow: hidden;
+}
+.btn-general span{
+    transition: all 350ms ease-in-out;
+    transform: translateX(0vw);
+}
+.btn-general i{
+    display: none;
+    transform: translateX(1.5vw);
+    transition: all 300ms ease-in-out;
+    font-size: 0.9vw;
+    padding-top: 0.2vw;
+}
+.btn-general:hover span{
+    transform: translateX(-0.3vw)
+}
+.btn-general:hover i{
+    transform: translateX(0.2vw)
+}
+
+
+/*========================================= HEADER ====================================*/
+
+.group-left ul{
+    display: none;
+}
+.group-right{
+    display: none;
+}
+.overlay-min-display {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 995;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: #ffffff;
+    border-bottom: none;
+}
+header nav{
+    width: 100%;
+    padding: 3vw 5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9999;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-grey-min-display);
+}
+.logo{
+    width: 32vw;
+}
+.logo img{
+    width: 100%;
+    padding: 0%;
+    display: block;
+}
+/****************************/
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    color: var(--text);
+    width: 100%;
+    border: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    animation: slideIn 0.4s forwards;
+    gap: 0vw;
+}
+@keyframes slideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.dropdown-menu a{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: 4.5vw 4vw;
+    background-color: #ffffff;
+    color: var(--text);
+    transition: all 300ms ease-in-out;
+    z-index: 3;
+    /*movil*/
+    border-bottom: 1px solid var(--border-grey-min-display);
+}
+.dropdown-menu a:hover{
+    color: var(--primary);
+}
+.dropdown-menu a span{
+    font-weight: 500;
+    font-size: 4vw;
+}
+
+/*******************************/
+.dropdown-btn {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: transparent;
+    border: none;
+}
+.dropdown-btn i{
+    font-size: 5vw;
+    color: var(--text);
+}
+.container-btn-dropdown{
+    display: flex;
+    gap: 7vw;
+}
+/**************************/
+#menu1 a{
+    justify-content: space-between;
+}
+#menu1 a i{
+    font-size: 5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--text);
+}
+#menu1 a span{
+    margin-right: auto;
+    color: var(--text);
+}
+#menu1 a i{
+    color: var(--text)
+}
+/******************************/
+#menu2 a{
+    justify-content: space-between;
+}
+#menu2 a i{
+    font-size: 5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--text);
+}
+#menu2 a span{
+    margin-right: auto;
+    margin-left: 5vw;
+    color: var(--text);
+}
+#menu2 a i{
+    color: var(--primary)
+}
+
+/*=========================================  PORTADA  ====================================*/
+
+.contenedorportada {
+  width: 100%;
+  height: 80vw;
+  position: relative;
+  overflow: visible;
+}
+
+.slide-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-container.active {
+  opacity: 1;
+}
+/******** ESTILOS DEL CONTENIDO DE LA PORTADA **********/
+.content {
+  position: absolute;
+  top: 100%;
+  height: 80vw;
+  left: 0%;
+  transform: translateX(-50%);
+  transform: translateY(-10%);
+  /*transform: translate(-50%, -50%);*/
+  text-align: center;
+  color: var(--text);
+  z-index: 2;
+  width: 100%;
+  background: #f8f8f8;
+  background: linear-gradient(0deg, rgba(248,248,248,1) 90%, transparent 100%);
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.text-content{
+    width: 100%;
+    height: min-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+}
+.content h1{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content p{
+    margin-top: 2vw; 
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content button{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vw; 
+}
+
+/******** ESTILOS DEL INDICADOR**********/
+.indicator-container {
+  position: absolute;
+  bottom: -68vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.indicator {
+  width: 5vw;
+  height: 2vw;
+  border-radius: 0.5vw;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: var(--primary);
+}
+
+/********* Botones de navegación ***********/
+.nav-button {
+    display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 2vw;
+  cursor: pointer;
+  z-index: 3;
+  padding: 0.8vw 0.5vw;
+  border-radius: 0.2vw;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.left-button {
+  left: 2vw;
+}
+
+.right-button {
+  right: 2vw;
+}
+/**********/
+.slide-container {
+    background-size: cover;
+    background-position:70% center;
+}
+
+/*=========================================== ESTILOS DE innovative-Products ======================================================*/
+
+.innovative-Products{
+    width: 100%;
+    padding: 4vw 5%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 75vw;
+}
+.innovative-Products h2{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5vw;
+}
+.featured-products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.featured-products a{
+    width: 49%;
+    background-color:#f1f5fb;
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 2vw;
+    text-align: center;
+    margin-top: 2vw;
+}
+.featured-products a img{
+    width: 90%;
+    margin: auto;
+    transition: transform 0.4s ease;
+}
+.featured-products a h4{
+    color: var(--text);
+    font-weight: 600;
+}
+.featured-products a:hover img {
+    transform: scale(1.07);
+}
+.featured-products a p{
+    margin-top: 2vw;
+    color: #7d7d7d;
+}
+.featured-products a span{
+    margin-top: 4vw;
+    font-size: 4vw;
+    color: var(--primary);
+    transition: all 300ms ease-in-out;
+}
+.featured-products a span i{
+    font-size: 3vw;
+    padding-left: 0.5vw;
+}
+.featured-products a:hover span{
+    text-decoration: underline;
+    text-underline-offset: 0.3vw;
+}
+
+/***************************/
+.special-product{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.special-product a{
+    background-color: #f1f5fb;
+    padding: 6vw 5vw;
+    margin-left: 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2vw;
+}
+.special-product a img{
+    width: 100%;
+    padding: 0vw 3%;
+    transition: transform 0.4s ease;
+}
+.special-product a:hover img {
+    transform: scale(1.07);
+}
+.special-product a h4{
+    font-size: 5vw;
+    font-weight: 600;
+    color: var(--text);
+    width: 100%;
+    padding: 0vw 5%;
+}
+.special-product a p{
+    margin-top: 3vw;
+    color: #7d7d7d;
+}
+.special-product a span{
+    margin-top: 4vw;
+    font-size: 4vw;
+    color: var(--primary);
+    transition: all 300ms ease-in-out;
+}
+.special-product a span i{
+    font-size: 3vw;
+    padding-left: 0.5vw;
+}
+.special-product a:hover span{
+    text-decoration: underline;
+    text-underline-offset: 0.3vw;
+}
+/*=========================================== ESTILOS DE ABOUT CONTAINER ======================================================*/
+.about-container{
+    width: 100%;
+    padding: 6vw 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-container h2{
+    margin-bottom: 7vw;
+}
+.img-about-content-right{
+    width: 100%;
+}
+.img-about-content-right img{
+    width: 100%;
+    display: block;
+    margin-right: 0%;
+    height: 50vw;
+    object-fit: cover;
+}
+.img-about-content-left{
+    width: 100%;
+    order: -1;
+}
+.img-about-content-left img{
+    width: 100%;
+    display: block;
+    margin-left: 0%;
+    height: 50vw;
+    object-fit: cover;
+}
+.text-about-content{
+    width: 100%;
+}
+.text-about-content{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.text-about-content h3{
+    margin-bottom: 1vw;
+    margin-top: 4vw;
+    font-size: 5vw;
+}
+.text-about-content p{
+    margin-top: 1vw;
+}
+.text-about-content a{
+    margin-right: auto;
+    margin-top: 4vw;
+    padding-bottom: 0.5vw;
+    color: var(--primary);
+}
+.text-about-content a span{
+    font-size: 4.2vw;
+    transition: all 300ms ease-in-out;
+}
+.text-about-content a i{
+    font-size: 3vw;
+    padding-left: 1vw;
+}
+.text-about-content a:hover span{
+    text-decoration: underline;
+    text-underline-offset: 0.7vw;
+}
+/*=========================================== ESTILOS DE CARRUSEL CONTAINER ======================================================*/
+.carrusel-container{
+    width: 100%;
+    padding: 10vw 5%;
+    background-color: transparent;
+}
+.carrusel-container h2{
+    text-align: center;
+    margin-bottom: 10vw;
+}
+.wrapper {
+   background-color: rgb(255, 255, 255);
+   width: 100%;
+   padding: 0vw 0%;
+   margin-top: 3vw;
+   margin-bottom: 2vw;
+   height: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.slider {
+   width: 100%;
+   height: auto;
+   position: relative;
+   background: rgb(255, 255, 255);
+   box-shadow: 0px;
+   display: flex;
+   overflow: hidden;
+}
+.slide {
+   height: auto;
+   background-color: transparent;
+   display: flex;
+   align-items: center;
+   animation: slideshow 30s linear infinite;
+}
+.slide img {
+   height: 7vw;
+   padding: 0 5vw;
+   display: block;
+}
+@keyframes slideshow {
+   0% {transform: translateX(0);}
+   100% {transform: translateX(-100%);}
+}
+.slider::before, .slider::after {
+   height: 100%;
+   width: 8vw;
+   position: absolute;
+   content: "";
+   background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 100%);
+   z-index: 2;
+}
+.slider::before {
+   left: 0;
+   top: 0;
+}
+.slider::after {
+   right:-0.1vw;
+   top:0;
+   transform: rotateZ(180deg);
+}
+/*=========================================== ESTILOS DE OPCIONES DE CONTACTO ======================================================*/
+.options-contact{
+    width: 100%;
+    background-color: var(--fondo-grey);
+    padding: 9vw 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.options-contact-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.options-contact-text p{
+    display: none;
+}
+.options-contact-icons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4vw 0vw;
+    margin-top: 5vw;
+}
+.options-contact-icons a{
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: left;
+    padding: 4vw 0vw;
+    transition: all 300ms ease-in-out;
+}
+.options-contact-icons a:hover{
+    background-color: #060d17;
+}
+.options-contact-icons a:hover span{
+    color: #ffffff;
+}
+.options-contact-icons a:hover i{
+    color: #ffffff;
+}
+.options-contact-icons a span{
+    margin-top: 1vw;
+    font-size: 4vw;
+    color: var(--text);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.options-contact-icons a i{
+    font-size: 12vw;
+    color: var(--text);
+    padding-right: 6vw;
+    margin-left: 10%;
+}
+
+.options-contact-img{
+    display: none;
+}
+/*=========================================== ESTILOS DE FOOTER ======================================================*/
+footer{
+    width: 90%;
+    margin: auto;
+    border-top: 1px solid #d8dcdf;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5vw 0vw;
+    margin-top: 7vw;
+}
+.info-footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 0vw;
+}
+#logo-footer{
+    display: none;
+}
+.info-footer h3{
+    margin-bottom: 1vw;
+    color: var(--text);
+}
+.info-footer p{
+    color: #9b9fa8;
+    margin-bottom: 1vw;
+}
+.info-footer a{
+    color: #9b9fa8;
+    width: min-content;
+    white-space: nowrap;
+    margin-top: 1vw;
+    margin-bottom: 0.3vw;
+    font-size: 4vw;
+    font-weight: 400;
+    transition: all 100ms ease-in-out;
+}
+.info-footer a:hover{
+    color: var(--primary);
+}
+.info-footer a i{
+    padding-right: 0.5vw;
+}
+/*************************/
+.info-footer .social-media{
+    display: flex;
+    margin-top: 3vw;
+}
+.info-footer .social-media a{
+    color: var(--text-grey);
+    margin-right: auto;
+    margin-left: auto;
+    background-color: transparent;
+    border: 1px solid #6e6e6e;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.info-footer .social-media a i{
+    font-size: 6vw;
+    padding-right: 0vw;
+}
+.info-footer .social-media a:hover{
+    color: var(--primary);
+}
+/***************************/
+.legal{
+    width: 100%;
+    padding: 3vw 5%;
+    background-color: var(--fondo-grey);
+    display: flex;
+    justify-content: space-between;
+}
+.legal p{
+    text-align: center;
+}
+.legal p i{
+    padding-right: 0.4vw;
+}
+.legal p:nth-child(2){
+    display: none;
+}
+
+
+
+
+
+
+
+}
