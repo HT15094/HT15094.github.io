@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+    <style>
+        /* Estilos base */
+        * {
+            font-family: Inter, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        body {
+            background: #ffffff;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-items {
+            width: 100%;
+            padding: 0vw 10%;
+        }
+        .section-items h2 {
+            font-size: 2vw;
+            color: #FF6600;
+        }
+        .item-details {
+            border-top: 1px solid #ddd;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item-details:hover {
+            background-color: #f9f9f9;
+        }
+        .item-details h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .item-details-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 3vw;
+            font-size: 1.5vw;
+            border-top: 1px solid #ddd;
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        }
+        .faq-toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .item-details.active .faq-toggle-icon {
+            transform: rotate(45deg);
+        }
+        .item-details.active + .item-details-answer {
+            max-height: 300px; /* Establece un valor suficiente grande en px */
+            padding: 3vw;
+        }
+
+        /* Media query para pantallas menores o iguales a 450px */
+        @media (max-width: 450px) {
+            .item-details.active + .item-details-answer {
+                max-height: 30vw; /* Cambia a vw para pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="section-items">
+    <h2>Productos</h2>
+    <div class="item-details">
+        <h3>¿Cómo inicio mi proceso de intercambio?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="item-details-answer">
+        Para iniciar el proceso de intercambio, debes comunicarte con la oficina de relaciones internacionales de tu universidad y seguir sus instrucciones específicas.
+    </div>
+
+    <div class="item-details">
+        <h3>¿Todas las carreras cuentan con convenios?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="item-details-answer">
+        No todas las carreras tienen convenios. Te recomendamos verificar con la oficina de relaciones internacionales los convenios vigentes para tu carrera.
+    </div>
+
+    <div class="item-details">
+        <h3>¿Cuáles son los requisitos para realizar un intercambio?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="item-details-answer">
+        Los requisitos suelen incluir un buen rendimiento académico, nivel de idioma y aprobación de tus profesores o facultad.
+    </div>
+
+    <div class="item-details">
+        <h3>¿Existen costos adicionales para realizar un intercambio?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="item-details-answer">
+        Sí, existen costos adicionales como seguro médico, trámite de visa y gastos de manutención en el país de destino.
+    </div>
+
+    <div class="item-details">
+        <h3>¿Cómo acredito mi nivel de inglés?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="item-details-answer">
+        Puedes acreditar tu nivel de inglés con exámenes internacionales como el TOEFL o IELTS, según lo requiera la universidad de destino.
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.item-details').forEach(item => {
+        item.addEventListener('click', () => {
+            // Cerrar cualquier respuesta abierta
+            document.querySelectorAll('.item-details.active').forEach(activeItem => {
+                if (activeItem !== item) { // Evitar cerrar el mismo item clickeado
+                    activeItem.classList.remove('active');
+                    activeItem.nextElementSibling.style.maxHeight = null;
+                }
+            });
+            
+            // Alternar la visibilidad del item clickeado
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

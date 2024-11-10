@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .faq-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .faq-header {
+            font-size: 24px;
+            color: #FF6600;
+        }
+        .faq-item {
+            border-top: 1px solid #ddd;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item:hover {
+            background-color: #f9f9f9;
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            font-size: 16px;
+            border-top: 1px solid #ddd;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-toggle-icon {
+            transform: rotate(45deg);
+        }
+        .faq-item.active + .faq-answer {
+            max-height: 200px; /* Ajusta el valor según el contenido */
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="faq-section">
+    <h2 class="faq-header">Preguntas Frecuentes</h2>
+    <div class="faq-item">
+        <h3>¿Cómo inicio mi proceso de intercambio?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        Para iniciar el proceso de intercambio, debes comunicarte con la oficina de relaciones internacionales de tu universidad y seguir sus instrucciones específicas.
+    </div>
+
+    <div class="faq-item">
+        <h3>¿Todas las carreras cuentan con convenios?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        No todas las carreras tienen convenios. Te recomendamos verificar con la oficina de relaciones internacionales los convenios vigentes para tu carrera.
+    </div>
+
+    <div class="faq-item">
+        <h3>¿Cuáles son los requisitos para realizar un intercambio?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        Los requisitos suelen incluir un buen rendimiento académico, nivel de idioma y aprobación de tus profesores o facultad.
+    </div>
+
+    <div class="faq-item">
+        <h3>¿Existen costos adicionales para realizar un intercambio?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        Sí, existen costos adicionales como seguro médico, trámite de visa y gastos de manutención en el país de destino.
+    </div>
+
+    <div class="faq-item">
+        <h3>¿Cómo acredito mi nivel de inglés?</h3>
+        <span class="faq-toggle-icon">+</span>
+    </div>
+    <div class="faq-answer">
+        Puedes acreditar tu nivel de inglés con exámenes internacionales como el TOEFL o IELTS, según lo requiera la universidad de destino.
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+            const answer = item.nextElementSibling;
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

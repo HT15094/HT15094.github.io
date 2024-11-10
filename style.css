@@ -928,9 +928,122 @@ footer{
     padding-right: 0.4vw;
 }
 
+/*=========================================== ESTILOS DE BANNER GENERAL ======================================================*/
+.container-banner-general{
+    width: 100%;
+    height: 25vw;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+#banner-nosotros{
+    background-image: url(banner.webp);
+}
+#banner-productos{
+    background-image: url(banner2.webp);
+}
+.container-text-banner-general{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 32%;
+}
+.text-banner-general{
+    width: 100%;
+}
+.text-banner-general h1{
+    margin-bottom: 1vw;
+}
+/*=========================================== ESTILOS DE SOBRE NOSOTROS ======================================================*/
+.container-description-about{
+    padding: 3vw 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.first-description-about{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.first-description-about{
+    width: 100%;
+}
+.first-description-about h2{
+    width: 35%;
+}
+.first-description-about p{
+    width: 65%;
+}
 
-
-
+/*=========================================== ESTILOS DE SOBRE NOSOTROS ======================================================*/
+.carousel-container {
+    width: 100%;
+    padding: 1vw 10%;
+    padding-bottom: 5vw;
+    overflow: visible;
+    position: relative;
+}
+.carousel {
+    display: flex;
+    justify-content: space-between;
+}
+.carousel div {
+    width: 30%;
+    height: 15vw;
+    background-color: var(--fondo-grey);
+    margin-right: 0;
+    padding: 0vw 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carousel div i{
+    margin-top: auto;
+    font-size: 2.2vw;
+    margin-bottom: 0.5vw;
+}
+.carousel div h3{
+    margin-bottom: 0.5vw;
+}
+.carousel div p{
+    margin-bottom: auto;
+}
+.btn-control-divs{
+    display: none;
+}
+/*=========================================== ESTILOS DE IMG FRASE ======================================================*/
+.container-phrase{
+    width: 100%;
+    background-image: url(banner2.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25vw;
+    position: relative;
+    margin-bottom: 5vw;
+}
+.text-phase{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    left: 10%;
+    background-color: #ffffff;
+    padding: 4vw 5vw;
+}
+.text-phase i{
+    font-size: 4vw;
+    position: absolute;
+}
+.text-phase i:nth-child(1){
+    top: 0.2vw;
+    left: 1vw;
+}
+.text-phase i:nth-child(2){
+    bottom: 0.2vw;
+    right: 1vw;
+}
 
 
 
@@ -1048,7 +1161,7 @@ header nav{
     justify-content: space-between;
     z-index: 9999;
     background-color: var(--dark);
-    border-bottom: 1px solid var(--border-grey-min-display);
+    border-bottom: 0px solid var(--border-grey-min-display);
 }
 .logo{
     width: 32vw;
@@ -1110,7 +1223,6 @@ header nav{
 }
 .dropdown-btn i{
     font-size: 5vw;
-    font-weight: 400;
     color: white;
 }
 .container-btn-dropdown{
@@ -1153,7 +1265,7 @@ header nav{
     color: var(--primary)
 }
 
-/*=========================================  PORTADA  ====================================*/
+/*==================================================================  PORTADA  ===============================================*/
 
 .contenedorportada {
   width: 100%;
@@ -1177,7 +1289,7 @@ header nav{
 .slide-container.active {
   opacity: 1;
 }
-/******** ESTILOS DEL CONTENIDO DE LA PORTADA **********/
+/**** CONTENIDO DE LA PORTADA *****/
 .content {
   position: absolute;
   top: 100%;
@@ -1190,11 +1302,10 @@ header nav{
   color: var(--text);
   z-index: 2;
   width: 100%;
-  background: #f8f8f8;
-  background: linear-gradient(0deg, rgba(248,248,248,1) 90%, transparent 100%);
+  background: var(--fondo-grey);
+  background: linear-gradient(0deg, #f1f3f5 90%, transparent 100%);
   display: flex;
   flex-wrap: wrap;
-  
 }
 .text-content{
     width: 100%;
@@ -1671,6 +1782,169 @@ footer{
 .legal p:nth-child(2){
     display: none;
 }
+
+/*=========================================== ESTILOS DE BANNER GENERAL ======================================================*/
+.container-banner-general{
+    width: 100%;
+    height: 60vw;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+#banner-nosotros{
+    background-image: url(Captura\ de\ pantalla\ 2024-11-08\ 171210.png);
+}
+.container-text-banner-general{
+    position: absolute;
+    top: 100%;
+    height: 70vw;
+    left: 0%;
+    transform: translateX(-50%);
+    transform: translateY(-10%);
+    /*transform: translate(-50%, -50%);*/
+    text-align: center;
+    color: var(--text);
+    z-index: 2;
+    width: 100%;
+    background: var(--fondo-grey);
+    background: linear-gradient(0deg, #f1f3f5 90%, transparent 100%);
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5vw;
+}
+.text-banner-general{
+    width: 100%;
+    padding: 0vw 10%;
+    height: min-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;  
+}
+.text-banner-general h1{
+    margin-bottom: 2vw;
+}
+/*=========================================== ESTILOS DE SOBRE NOSOTROS ======================================================*/
+.container-description-about{
+    padding: 3vw 5%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 65vw;
+}
+.first-description-about{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.first-description-about{
+    width: 100%;
+    text-align: center;
+}
+.first-description-about h2{
+    width: 100%;
+}
+.first-description-about p{
+    width: 100%;
+}
+
+/*******************************************************************/
+.carousel-container {
+    margin-top: 8vw;
+    max-width: 450px;
+    overflow: hidden;
+    padding-bottom: 10vw;
+}
+.carousel {
+    transition: transform 0.3s ease;
+}
+.carousel div {
+    width: 90%;
+    min-width: 90%;
+}
+.carousel div {
+    width: 30%;
+    height: 70vw;
+    background-color: var(--fondo-grey);
+    margin-right: 5%;
+    padding: 0vw 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carousel div i{
+    margin-top: auto;
+    font-size: 7vw;
+    margin-bottom: 2vw;
+}
+.carousel div h3{
+    margin-bottom: 2vw;
+    font-size: 4.5vw;
+}
+.carousel div p{
+    margin-bottom: auto;
+}
+
+/* Botones de navegación */
+.btn-control-divs{
+    position: relative;
+    display: flex;
+    gap: 5vw;
+    justify-content: end;
+    margin-top: 5vw;
+}
+.btn-control-divs button {
+    display: flex;
+    position: relative;
+    background-color: var(--fondo-grey);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-control-divs button i{
+    font-size: 6vw;
+    color: var(--text);
+}
+/*=========================================== ESTILOS DE IMG FRASE ======================================================*/
+.container-phrase{
+    width: 100%;
+    background-image: url(banner2.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vw;
+    position: relative;
+    margin-bottom: 8vw;
+}
+.text-phase{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+    left: 10%;
+    background-color: #ffffff;
+    padding: 12vw 8vw;
+}
+.text-phase i{
+    font-size: 8vw;
+    position: absolute;
+}
+.text-phase i:nth-child(1){
+    top: 2vw;
+    left: 3vw;
+}
+.text-phase i:nth-child(2){
+    bottom: 2vw;
+    right: 3vw;
+}
+
+
+
 
 
 

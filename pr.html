@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrusel de Divs</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .carousel-container {
+    width: 100%;
+    padding: 0vw 10%;
+    overflow: visible;
+    position: relative;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .carousel div {
+    width: 30%;
+    height: 200px;
+    background-color: #333;
+    margin-right: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1vw;
+  }
+
+  .carousel div h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .carousel div p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+
+  /* Oculta los botones en pantallas grandes */
+  .button {
+    display: none;
+  }
+
+  /* Estilos para pantallas menores a 450px */
+  @media (max-width: 450px) {
+    .carousel-container {
+      max-width: 450px;
+      overflow: hidden;
+    }
+
+    .carousel {
+      transition: transform 0.3s ease;
+    }
+
+    .carousel div {
+      width: 90%;
+      min-width: 90%;
+      margin-right: 20px;
+    }
+
+    /* Botones de navegación */
+    .btn-control-divs{
+        position: relative;
+        display: flex;
+        gap: 10vw;
+        justify-content: end;
+        margin-top: 5vw;
+    }
+    .button {
+      display: flex;
+      position: relative;
+      background-color: #2f2f2f;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-left {
+      left: 10px;
+    }
+
+    .button-right {
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <div>
+      <h3>Accesibilidad</h3>
+      <p>Nuestras funciones de accesibilidad están diseñadas para funcionar como tú lo necesitas.</p>
+    </div>
+    <div>
+      <h3>Entorno</h3>
+      <p>Estamos comprometidos con reducir nuestro impacto ambiental.</p>
+    </div>
+    <div>
+      <h3>Innovación</h3>
+      <p>La innovación está en el corazón de lo que hacemos.</p>
+    </div>
+  </div>
+  <div class="btn-control-divs">
+    <button class="button button-left" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="button button-right" onclick="moveCarousel(1)">&#10095;</button>    
+  </div>
+
+</div>
+
+<script>
+  let currentSlide = 0;
+  const carousel = document.getElementById('carousel');
+  let startX = 0;
+  let endX = 0;
+
+  function moveCarousel(direction) {
+    const slides = document.querySelectorAll('.carousel div');
+    const totalSlides = slides.length;
+
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+    carousel.style.transform = `translateX(-${currentSlide * 90}%)`;
+  }
+
+  // Eventos de toque para pantallas táctiles
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  carousel.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  carousel.addEventListener('touchend', () => {
+    const threshold = 50; // Distancia mínima para considerar un deslizamiento
+    if (startX - endX > threshold) {
+      moveCarousel(1); // Deslizar a la izquierda
+    } else if (endX - startX > threshold) {
+      moveCarousel(-1); // Deslizar a la derecha
+    }
+  });
+</script>
+
+</body>
+</html>
+
